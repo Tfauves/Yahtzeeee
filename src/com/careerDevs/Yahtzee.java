@@ -15,8 +15,10 @@ public class Yahtzee {
     }
     //TODO refactor play to run 5 turns then display total score.
     public void play() {
+        for (int i = 0; i < 5; i++) {
         turn();
-        //System.out.println("\u2680");
+        }
+        System.out.println(player.score);
     }
 
     public void getSelections() {
@@ -28,12 +30,13 @@ public class Yahtzee {
     //TODO refactor turn to update score and display round score *(and total score)
     public void turn() {
         player.cup.roll();
-        for (int i = 0; i < 2; i++) {
+       // for (int i = 0; i < 2; i++) {
             System.out.println(player.cup.displayCup());
             getSelections();
-        }
+            player.updateScore();
+            // }
 
-        System.out.println(player.cup.displayCup());
+        //System.out.println(player.cup.displayCup());
 
     }
 
